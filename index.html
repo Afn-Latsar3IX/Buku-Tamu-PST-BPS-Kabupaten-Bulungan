@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== REMIXICONS ===============-->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Formulir Registrasi - Buku Tamu PST BPS Kabupaten Bulungan</title>
+</head>
+<body>
+   <div class="register">
+      <img src="assets/img/register-bg.JPG" alt="register image" class="register__img">
+
+      <form id="register-form" class="register__form">
+         <div class="register__content">
+            <div class="register__box">
+               <i class="ri-user-3-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="text" required class="register__input" id="nama_lengkap" name="nama_lengkap" placeholder=" ">
+                  <label for="nama_lengkap" class="register__label">Nama Lengkap</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-mail-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="email" required class="register__input" id="email" name="email" placeholder=" ">
+                  <label for="email" class="register__label">Email</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-map-pin-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="text" required class="register__input" id="alamat" name="alamat" placeholder=" ">
+                  <label for="alamat" class="register__label">Alamat</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-phone-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="text" class="register__input" id="no_hp" name="no_hp" placeholder=" ">
+                  <label for="no_hp" class="register__label">No. HP</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-calendar-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="number" required class="register__input" id="umur" name="umur" placeholder=" ">
+                  <label for="umur" class="register__label">Umur</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-building-line register__icon"></i>
+               <div class="register__box-input">
+                  <input type="text" required class="register__input" id="asal_instansi" name="asal_instansi" placeholder=" ">
+                  <label for="asal_instansi" class="register__label">Asal/Instansi</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-gender-line register__icon"></i>
+               <div class="register__box-input">
+                  <select required class="register__input" id="jenis_kelamin" name="jenis_kelamin">
+                     <option value="" disabled selected></option>
+                     <option value="Laki-laki">Laki-laki</option>
+                     <option value="Perempuan">Perempuan</option>
+                  </select>
+                  <label for="jenis_kelamin" class="register__label">Jenis Kelamin</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-book-line register__icon"></i>
+               <div class="register__box-input">
+                  <select required class="register__input" id="pendidikan" name="pendidikan">
+                     <option value="" disabled selected></option>
+                     <option value="SD">SD atau setingkatnya</option>
+                     <option value="SMP">SMP atau setingkatnya</option>
+                     <option value="SMA">SMA atau setingkatnya</option>
+                     <option value="D1/D2/D3">D1/D2/D3</option>
+                     <option value="D4/S1">D4/S1</option>
+                     <option value="S2">S2</option>
+                     <option value="S3">S3</option>
+                  </select>
+                  <label for="pendidikan" class="register__label">Pendidikan</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-briefcase-line register__icon"></i>
+               <div class="register__box-input">
+                  <select required class="register__input" id="pekerjaan" name="pekerjaan">
+                     <option value="" disabled selected></option>
+                     <option value="Guru/Dosen">Guru/Dosen</option>
+                     <option value="Karyawan BUMN">Karyawan BUMN</option>
+                     <option value="Karyawan Swasta">Karyawan Swasta</option>
+                     <option value="Mahasiswa">Mahasiswa</option>
+                     <option value="PNS">PNS</option>
+                     <option value="Polri/TNI">Polri/TNI</option>
+                     <option value="Wiraswasta">Wiraswasta</option>
+                  </select>
+                  <label for="pekerjaan" class="register__label">Pekerjaan</label>
+               </div>
+            </div>
+
+            <div class="register__box">
+               <i class="ri-question-line register__icon"></i>
+               <div class="register__box-input">
+                  <select required class="register__input" id="keperluan" name="keperluan">
+                     <option value="" disabled selected></option>
+                     <option value="Perpustakaan Tercetak">Perpustakaan Tercetak</option>
+                     <option value="Perpustakaan Digital">Perpustakaan Digital</option>
+                     <option value="Konsultasi Statistik">Konsultasi Statistik</option>
+                     <option value="Data Mikro">Data Mikro</option>
+                     <option value="Rekomendasi Kegiatan Statistik">Rekomendasi Kegiatan Statistik</option>
+                  </select>
+                  <label for="keperluan" class="register__label">Keperluan</label>
+               </div>
+            </div>
+         </div>
+
+         <button type="submit" class="register__button">Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan</button>
+      </form>
+   </div>
+   
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/validasi.js"></script>
+   <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzpNDz4C6u2d3MY8GVK3C7BqbIsDSv5XZppkolSTtTXzEbe3HtsF5MAz8ROPPeIe2A/exec'
+      const form = document.querySelector('#register-form')
+      const btn = document.querySelector('.register__button')
+  
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        btn.disabled = true
+        btn.innerHTML = "Loading..."
+  
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => response.json())
+          .then(response => {
+              if (response.result === 'success') {
+                  form.reset(); // Membersihkan isian form
+                  alert('Success!');
+              } else {
+                  alert('Error: ' + response.message);
+              }
+              btn.disabled = false
+              btn.innerHTML = "Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan"
+          })
+          .catch(error => {
+              alert('Error: ' + error.message);
+              btn.disabled = false
+              btn.innerHTML = "Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan"
+          })
+      })
+  </script>
+   
+</body>
+</html>
