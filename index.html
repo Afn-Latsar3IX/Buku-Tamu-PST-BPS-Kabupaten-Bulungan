@@ -144,28 +144,43 @@
   
       form.addEventListener('submit', e => {
         e.preventDefault()
-        btn.disabled = true
-        btn.innerHTML = "Loading..."
+        if (validateForm()) {
+            btn.disabled = true
+            btn.innerHTML = "Loading..."
   
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => response.json())
-          .then(response => {
-              if (response.result === 'success') {
-                  form.reset(); // Membersihkan isian form
-                  alert('Success!');
-              } else {
-                  alert('Error: ' + response.message);
-              }
-              btn.disabled = false
-              btn.innerHTML = "Submit"
-          })
-          .catch(error => {
-              alert('Error: ' + error.message);
-              btn.disabled = false
-              btn.innerHTML = "Submit"
-          })
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => response.json())
+                .then(response => {
+                    if (response.result === 'success') {
+                        form.reset(); // Membersihkan isian form
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil',
+                            text: 'Data berhasil dikirim!'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal',
+                            text: 'Terjadi kesalahan: ' + response.message
+                        });
+                    }
+                    btn.disabled = false
+                    btn.innerHTML = "Submit"
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Gagal',
+                        text: 'Terjadi kesalahan: ' + error.message
+                    });
+                    btn.disabled = false
+                    btn.innerHTML = "Submit"
+                })
+        } else {
+            // Form is not valid, display error messages or take other actions
+        }
       })
   </script>
-   
 </body>
 </html>
