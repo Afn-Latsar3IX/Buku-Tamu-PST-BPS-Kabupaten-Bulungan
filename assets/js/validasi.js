@@ -6,31 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         if (validateForm()) {
-            // Form is valid, proceed with submission or other actions
             alert('Form is valid. Data can be submitted.');
         } else {
             // Form is not valid, display error messages or take other actions
-            // Errors are handled within validateForm()
         }
     });
 
     function validateForm() {
         let isValid = true;
-
-        // Validate each required input
-        const inputs = form.querySelectorAll('.register__input[required]');
-        inputs.forEach(function(input) {
-            if (!input.value.trim()) {
-                isValid = false;
-                input.classList.add('error');
-            } else {
-                input.classList.remove('error');
-            }
-        });
+        const nama = fullname.value.trim();
+        const emailValue = email.value.trim();
 
         // Validasi nama hanya berisi huruf
         var namaRegex = /^[a-zA-Z\s]+$/;
-        if (!namaRegex.test(fullname.value)) {
+        if (!namaRegex.test(nama)) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -44,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Validasi format email
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value)) {
+        if (!emailRegex.test(emailValue)) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -55,6 +44,22 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             email.classList.remove('error');
         }
+
+        // Validate other required fields
+        const inputs = form.querySelectorAll('.register__input[required]');
+        inputs.forEach(function(input) {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('error');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Field ${input.name} is required!`
+                });
+            } else {
+                input.classList.remove('error');
+            }
+        });
 
         return isValid;
     }
