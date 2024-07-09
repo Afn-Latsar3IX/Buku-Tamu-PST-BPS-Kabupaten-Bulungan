@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('.register__form');
+    const form = document.querySelector('#register-form');
     const fullname = document.getElementById("nama_lengkap");
     const email = document.getElementById("email");
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            alert('Form is valid. Data can be submitted.');
-        } else {
-            // Form is not valid, display error messages or take other actions
-        }
-    });
 
     function validateForm() {
         let isValid = true;
@@ -71,4 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.remove('error');
         });
     });
+
+    // Export validateForm to global scope
+    window.validateForm = validateForm;
 });
