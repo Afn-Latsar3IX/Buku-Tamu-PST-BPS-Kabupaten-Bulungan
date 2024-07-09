@@ -142,6 +142,10 @@ select.register__input option {
   color: var(--black-color);
 }
 
+.error {
+  border-color: red;
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For medium devices */
 @media screen and (min-width: 576px) {
