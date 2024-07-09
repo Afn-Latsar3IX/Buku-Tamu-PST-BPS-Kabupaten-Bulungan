@@ -17,6 +17,7 @@
       <img src="assets/img/register-bg.JPG" alt="register image" class="register__img">
 
       <form id="register-form" class="register__form">
+         <h2 class="register__title">Buku Tamu BPS Bulungan</h2>
          <div class="register__content">
             <div class="register__box">
                <i class="ri-user-3-line register__icon"></i>
@@ -104,7 +105,7 @@
                      <option value="Karyawan BUMN">Karyawan BUMN</option>
                      <option value="Karyawan Swasta">Karyawan Swasta</option>
                      <option value="Mahasiswa">Mahasiswa</option>
-                     <option value="PNS">PNS</option>
+                     <option value="ASN">PNS/PPPK</option>
                      <option value="Polri/TNI">Polri/TNI</option>
                      <option value="Wiraswasta">Wiraswasta</option>
                   </select>
@@ -128,7 +129,7 @@
             </div>
          </div>
 
-         <button type="submit" class="register__button">Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan</button>
+         <button type="submit" class="register__button">Submit</button>
       </form>
    </div>
    
@@ -154,12 +155,12 @@
                   alert('Error: ' + response.message);
               }
               btn.disabled = false
-              btn.innerHTML = "Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan"
+              btn.innerHTML = "Submit"
           })
           .catch(error => {
               alert('Error: ' + error.message);
               btn.disabled = false
-              btn.innerHTML = "Submit Data ke Buku Tamu PST BPS Kabupaten Bulungan"
+              btn.innerHTML = "Submit"
           })
       })
   </script>
