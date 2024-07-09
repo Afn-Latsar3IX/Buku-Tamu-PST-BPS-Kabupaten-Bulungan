@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.register__form');
-    const fullname = document.getElementById("register-fullname");
-    const email = document.getElementById("register-email");
+    const fullname = document.getElementById("nama_lengkap");
+    const email = document.getElementById("email");
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         if (validateForm()) {
-            // Form is valid, proceed with submission or other actions
             alert('Form is valid. Data can be submitted.');
         } else {
-            // Form is not valid, display error messages or take other actions
             alert('Please fill in all required fields.');
         }
     });
@@ -32,11 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!/^[a-zA-Z\s]+$/.test(fullname.value)) {
             isValid = false;
             alert("Nama harus berisi teks saja");
+            fullname.classList.add('error');
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
             isValid = false;
             alert("Email tidak valid");
+            email.classList.add('error');
         }
 
         return isValid;
