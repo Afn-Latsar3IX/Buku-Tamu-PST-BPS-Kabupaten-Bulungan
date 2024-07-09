@@ -6,9 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         if (validateForm()) {
+            // Form is valid, proceed with submission or other actions
             alert('Form is valid. Data can be submitted.');
         } else {
-            alert('Please fill in all required fields.');
+            // Form is not valid, display error messages or take other actions
+            // Errors are handled within validateForm()
         }
     });
 
@@ -26,17 +28,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Additional validation for name and email
-        if (!/^[a-zA-Z\s]+$/.test(fullname.value)) {
+        // Validasi nama hanya berisi huruf
+        var namaRegex = /^[a-zA-Z\s]+$/;
+        if (!namaRegex.test(fullname.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Nama hanya boleh berisi huruf!'
+            });
             isValid = false;
-            alert("Nama harus berisi teks saja");
             fullname.classList.add('error');
+        } else {
+            fullname.classList.remove('error');
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        // Validasi format email
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Format email tidak valid!'
+            });
             isValid = false;
-            alert("Email tidak valid");
             email.classList.add('error');
+        } else {
+            email.classList.remove('error');
         }
 
         return isValid;
