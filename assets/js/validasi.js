@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Validasi nomor telepon Indonesia
-        var phoneRegex = /^(\+62|62|0)8[1-9][0-9]{6,9}$/;
+        var phoneRegex = /^(\+62|62|0)8[1-9][0-9]{7,10}$/;
         if (phoneValue && !phoneRegex.test(phoneValue)) {
             Swal.fire({
                 icon: 'error',
